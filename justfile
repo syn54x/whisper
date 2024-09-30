@@ -1,8 +1,3 @@
-activate:
-    # Command to activate the environment
-    echo "Activating environment..."
-    source .venv/bin/activate
-
 install:
     # Command to install dependencies
     echo "Installing dependencies..."

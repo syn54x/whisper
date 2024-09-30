@@ -1,0 +1,42 @@
+[project]
+name = "whisper"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Myg0t", email = "myg0tm3dia@gmail.com" }
+]
+dependencies = [
+    "typer>=0.12.5",
+    "rich>=13.8.1",
+    "langchain>=0.3.1",
+    "langchain-core>=0.3.6",
+    "pydantic>=2.9.2",
+    "pydantic-settings>=2.5.2",
+    "langchain-openai>=0.2.1",
+    "langchain-anthropic>=0.2.1",
+    "toml>=0.10.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"whisper" = "whisper:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ipython>=8.27.0",
+    "ipykernel>=6.29.5",
+    "ruff>=0.6.8",
+    "pre-commit>=3.8.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/whisper"]

@@ -1,5 +1,5 @@
 
-![demo](https://github.com/user-attachments/assets/846eda14-195c-4bdb-b971-62c68ba7edf1)
+![demo](https://github.com/user-attachments/assets/40130388-2452-4902-9bca-2fb76ad79ffe)
 
 # `whisper`
 

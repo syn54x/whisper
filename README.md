@@ -8,7 +8,7 @@
 To install Whisper, you can use pip:
 
 ```console
-pip install whisper
+pip install just-whisper
 ```
 
 ## Setup

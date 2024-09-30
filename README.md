@@ -28,7 +28,7 @@ If you have keys for OpenAI or Anthropic handy, you can initialize the configura
 $ whisper init --openai-key <your-openai-key> --anthropic-key <your-anthropic-key>
 ```
 
-**Usage**:
+## Usage:
 
 ```console
 $ whisper [OPTIONS] COMMAND [ARGS]...

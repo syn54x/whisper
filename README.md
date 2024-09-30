@@ -1,3 +1,6 @@
+
+![demo](https://github.com/user-attachments/assets/846eda14-195c-4bdb-b971-62c68ba7edf1)
+
 # `whisper`
 
 ## Install

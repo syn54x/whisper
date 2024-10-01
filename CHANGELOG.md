@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+
+## [0.1.2] - 2024-08-01
+
+### Added
+
 - Anthropic Integration [#6](https://github.com/syn54x/just-whisper/pull/6)
 
 ### Changed

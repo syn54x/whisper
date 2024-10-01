@@ -51,18 +51,26 @@ def ask(
         chain = create_chain(key, model)
         result = chain.invoke({"context": prompt})
 
-    syntax = Syntax(
-        result.snippet, lexer=result.language, line_numbers=True, padding=1, theme=theme
-    )
-    description_text = Text(
-        result.description,
-    )
-    combined_content = Group(
-        description_text, syntax
-    )  # Group the description and syntax
-    console.print(
-        Panel(combined_content, title="Result", border_style="green")
-    )  # Wrap combined content in a single Panel
+    if isinstance(result, str):
+        text = Text(result)
+        console.print(text, title="Result", border_style="green")
+    else:
+        syntax = Syntax(
+            result.snippet,
+            lexer=result.language,
+            line_numbers=True,
+            padding=1,
+            theme=theme,
+        )
+        description_text = Text(
+            result.description,
+        )
+        combined_content = Group(
+            description_text, syntax
+        )  # Group the description and syntax
+        console.print(
+            Panel(combined_content, title="Result", border_style="green")
+        )  # Wrap combined content in a single Panel
 
 
 @app.command()

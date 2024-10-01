@@ -15,6 +15,8 @@ dependencies = [
     "langchain-openai>=0.2.1",
     "langchain-anthropic>=0.2.1",
     "toml>=0.10.2",
+    "langchain-mistralai>=0.2.0",
+    "langchain-fireworks>=0.2.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"

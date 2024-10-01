@@ -65,6 +65,15 @@ def init(
     anthropic_key: str = typer.Option(
         None, "--anthropic-key", help="The Anthropic API key to use"
     ),
+    azureopenai_key: str = typer.Option(
+        None, "--azureopenai-key", help="The Azure OpenAI API key to use"
+    ),
+    mistral_key: str = typer.Option(
+        None, "--mistral-key", help="The Mistral API key to use"
+    ),
+    fireworks_key: str = typer.Option(
+        None, "--fireworks-key", help="The Fireworks API key to use"
+    ),
     show: Annotated[
         bool, typer.Option("--show/--no-show", help="Show the configuration")
     ] = True,

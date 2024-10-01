@@ -21,3 +21,5 @@ jobs:
       - name: Install dependencies
         run: uv sync -p 3.12
       - uses: pre-commit/action@v3.0.0
+      - name: Build Docs
+        run: uv run mkdocs build

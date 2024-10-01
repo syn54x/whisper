@@ -1,6 +1,6 @@
 ![demo](https://github.com/user-attachments/assets/40130388-2452-4902-9bca-2fb76ad79ffe)
 
-# 🤫 `whisper`
+# `whisper` 🤫
 
 ## Install
 

@@ -1,8 +1,13 @@
 install:
     # Command to install dependencies
     echo "Installing dependencies..."
-    rye sync
+    uv sync
     pre-commit install
+
+serve:
+    # Command to serve the documentation
+    echo "Serving documentation..."
+    uv run mkdocs serve
 
 lint:
     # Command to run linter

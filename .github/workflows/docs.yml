@@ -32,3 +32,5 @@ jobs:
         run: uv sync -p 3.12
       - name: deploy
         run: uv run mkdocs gh-deploy --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

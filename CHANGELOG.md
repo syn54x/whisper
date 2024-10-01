@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial setup of the project structure.
-- Basic command-line interface for the Whisper application.
 
 ### Changed
+
+- Update `pyproject.toml` to specify Python version >= 3.10.
+- Update `pyproject.toml` to specify `uv` as the build system.
 
 ### Deprecated
 
@@ -22,8 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 ## [0.1.0] - 2023-09-30
+
 ### Added
-- Project initialization with basic configuration and dependencies as specified in `pyproject.toml` (startLine: 1, endLine: 42).
+
+- Initial setup of the project structure.
+- Basic command-line interface for the Whisper application.
+- Project initialization with basic configuration and dependencies as specified in `pyproject.toml`.
 - Implementation of Whisper CLI commands in `src/whisper/__init__.py` (startLine: 27, endLine: 92).
 - Configuration management commands in `src/whisper/config.py` (startLine: 1, endLine: 36).
 

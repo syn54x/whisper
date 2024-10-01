@@ -2,7 +2,6 @@ from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 
 from .settings import UserConfig
 
@@ -37,12 +36,8 @@ def create_chain(key: str = None, model: str = None):
             model=model, temperature=0, openai_api_key=config.openai.api_key
         ).with_structured_output(CodeWhisper)
     elif key == "anthropic":
-        return (
-            TEMPLATE
-            | ChatAnthropic(
-                model=model, temperature=0, anthropic_api_key=config.anthropic.api_key
-            )
-            | StrOutputParser()
-        )
+        return TEMPLATE | ChatAnthropic(
+            model=model, temperature=0, anthropic_api_key=config.anthropic.api_key
+        ).with_structured_output(CodeWhisper)
     else:
         raise ValueError(f"Model {model} not found")

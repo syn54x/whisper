@@ -27,7 +27,7 @@ theme:
 nav:
   - Home: index.md
   - Changelog: changelog.md
-  - cli: typer.md
+  - CLI: cli.md
 
 markdown_extensions:
   - abbr

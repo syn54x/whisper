@@ -5,14 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.1] - 2024-08-01
 
 ### Added
+
+- Add github-pages documentation using mkdocs [#2](https://github.com/syn54x/just-whisper/pull/2)
+
 
 ### Changed
 
 - Update `pyproject.toml` to specify Python version >= 3.10.
-- Update `pyproject.toml` to specify `uv` as the build system.
+- Update `pyproject.toml` to specify `uv` as the build system [#3](https://github.com/syn54x/just-whisper/pull/3).
 
 ### Deprecated
 
@@ -20,9 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix str has no snippet [#3](https://github.com/syn54x/just-whisper/issues/3)
+
 ### Security
 
-## [0.1.0] - 2023-09-30
+## [0.1.0] - 2024-07-30
 
 ### Added
 

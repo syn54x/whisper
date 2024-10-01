@@ -10,3 +10,5 @@ wheels/
 .venv
 demo.gif
 demo.yml
+requirements-dev.lock
+requirements.lock

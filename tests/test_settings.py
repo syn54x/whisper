@@ -60,7 +60,7 @@ def test_load_user_config(user_config):
 def test_save_user_config(tmp_path, user_config):
     user_config.openai.api_key = "new-api-key"
     user_config.save()
-    config_path = Path.home() / ".whisper" / "whisper.toml"
+    config_path = Path(user_config.model_config["toml_file"][0])
     assert config_path.read_text().find("new-api-key") != -1
 
 

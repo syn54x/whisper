@@ -27,6 +27,18 @@ class AnthropicConfig(BaseModelConfig):
     model: str = "claude-3-5-sonnet-20240620"
 
 
+class MistralAIConfig(BaseModelConfig):
+    model: str = "pixtral-12b-2409"
+
+
+class FireworksConfig(BaseModelConfig):
+    model: str = "accounts/fireworks/models/llama-v3p1-405b-instruct"
+
+
+class AzureOpenAIConfig(BaseModelConfig):
+    model: str = "gpt-4o"
+
+
 class UserConfig(BaseSettings):
     model_config = SettingsConfigDict(toml_file=["~/.whisper/whisper.toml"])
 
@@ -34,6 +46,9 @@ class UserConfig(BaseSettings):
 
     openai: OpenAIConfig = Field(default_factory=OpenAIConfig)
     anthropic: AnthropicConfig = Field(default_factory=AnthropicConfig)
+    mistral: MistralAIConfig = Field(default_factory=MistralAIConfig)
+    fireworks: FireworksConfig = Field(default_factory=FireworksConfig)
+    azureopenai: AzureOpenAIConfig = Field(default_factory=AzureOpenAIConfig)
 
     def get_by_dot_notation(self, key: str):
         keys = key.split(".")

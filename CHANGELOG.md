@@ -19,6 +19,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [0.1.3] - 2024-08-01
+
+### Added
+
+- Added support for Mistral, Fireworks and Azure OpenAI.
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
 
 ## [0.1.2] - 2024-08-01
 

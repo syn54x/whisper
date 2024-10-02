@@ -12,6 +12,30 @@
 ![License](https://img.shields.io/github/license/syn54x/whisper)
 ![GitHub issues](https://img.shields.io/github/issues/syn54x/whisper)
 
+## Supported Models
+
+| Provider Name                | Supported by Whisper | Config Key |
+|------------------------------|----------------------|------------|
+| ChatAnthropic                | ✅                   | anthropic  |
+| ChatMistralAI                | ✅                   | mistral    |
+| ChatFireworks                | ✅                   | fireworks  |
+| AzureChatOpenAI              | ✅                   | azureopenai|
+| ChatOpenAI                   | ✅                   | openai     |
+| ChatTogether                 | ❌                   |            |
+| ChatVertexAI                 | ❌                   |            |
+| ChatGoogleGenerativeAI       | ❌                   |            |
+| ChatGroq                     | ❌                   |            |
+| ChatCohere                   | ❌                   |            |
+| ChatBedrock                  | ❌                   |            |
+| ChatHuggingFace              | ❌                   |            |
+| ChatNVIDIA                   | ❌                   |            |
+| ChatOllama                   | ❌                   |            |
+| ChatLlamaCpp                 | ❌                   |            |
+| ChatAI21                     | ❌                   |            |
+| ChatUpstage                  | ❌                   |            |
+| ChatDatabricks               | ❌                   |            |
+
+
 ## Install
 
 To install Whisper, you can use pip:

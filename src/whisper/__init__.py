@@ -1,16 +1,12 @@
 from pydantic_core import ValidationError
 
-
 try:
     import typer
     from typing import Annotated
     from pathlib import Path
-    from rich.console import Console, Group
+    from rich.console import Console
     from rich.pretty import pprint
     from rich import print
-    from rich.syntax import Syntax
-    from rich.panel import Panel
-    from rich.text import Text
     from pygments.styles import get_all_styles
 
     from .settings import UserConfig
@@ -51,26 +47,8 @@ def ask(
         chain = create_chain(key, model)
         result = chain.invoke({"context": prompt})
 
-    if isinstance(result, str):
-        text = Text(result)
-        console.print(text, title="Result", border_style="green")
-    else:
-        syntax = Syntax(
-            result.snippet,
-            lexer=result.language,
-            line_numbers=True,
-            padding=1,
-            theme=theme,
-        )
-        description_text = Text(
-            result.description,
-        )
-        combined_content = Group(
-            description_text, syntax
-        )  # Group the description and syntax
-        console.print(
-            Panel(combined_content, title="Result", border_style="green")
-        )  # Wrap combined content in a single Panel
+    panel = result.render(theme)
+    console.print(panel)
 
 
 @app.command()
@@ -86,6 +64,15 @@ def init(
     ),
     anthropic_key: str = typer.Option(
         None, "--anthropic-key", help="The Anthropic API key to use"
+    ),
+    azureopenai_key: str = typer.Option(
+        None, "--azureopenai-key", help="The Azure OpenAI API key to use"
+    ),
+    mistral_key: str = typer.Option(
+        None, "--mistral-key", help="The Mistral API key to use"
+    ),
+    fireworks_key: str = typer.Option(
+        None, "--fireworks-key", help="The Fireworks API key to use"
     ),
     show: Annotated[
         bool, typer.Option("--show/--no-show", help="Show the configuration")

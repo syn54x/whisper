@@ -13,3 +13,6 @@ lint:
     # Command to run linter
     echo "Running linter..."
     pre-commit run --all-files
+
+test:
+    uv run pytest -x

@@ -50,7 +50,7 @@ def ask(
     if copy is not None:
         if copy and result.snippet:
             clipboard.copy(result.snippet)
-    elif config.default.copy and result.content:
+    elif config.default.copy_snippet and result.content:
         clipboard.copy(result.content)
 
     panel = result.render(theme)

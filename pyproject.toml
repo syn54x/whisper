@@ -45,6 +45,9 @@ dev-dependencies = [
     "mkdocstrings>=0.26.1",
     "mkdocs-material>=9.5.39",
     "mkdocs-jupyter>=0.25.0",
+    "pytest>=8.3.3",
+    "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
 ]
 
 [tool.hatch.metadata]
@@ -52,3 +55,30 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/whisper"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=src --cov-fail-under=80"
+testpaths = [
+    "tests",
+]
+python_files = [
+    "test_*.py",
+    "test*.py",
+]
+python_classes = [
+    "Test*",
+    "test*",
+]
+python_functions = [
+    "test_*",
+    "test*",
+]
+markers = [
+    "webtest: mark a test as a webtest.",
+    "slow: mark tests as slow (deselect with '-m \"not slow\"').",
+]
+# filterwarnings = [
+#     "error",
+#     "ignore::UserWarning",
+# ]

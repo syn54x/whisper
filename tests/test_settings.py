@@ -4,6 +4,32 @@ from pathlib import Path
 from whisper.settings import UserConfig
 
 
+expected_toml = """[default]
+config = "openai"
+theme = "solarized-dark"
+
+[openai]
+api_key = "replace-me"
+model = "gpt-3.5-turbo"
+
+[anthropic]
+api_key = "replace-me"
+model = "claude-3-5-sonnet-20240620"
+
+[mistral]
+api_key = "replace-me"
+model = "pixtral-12b-2409"
+
+[fireworks]
+api_key = "replace-me"
+model = "accounts/fireworks/models/llama-v3p1-405b-instruct"
+
+[azureopenai]
+api_key = "replace-me"
+model = "gpt-4o"
+"""
+
+
 @pytest.fixture
 def user_config(tmp_path):
     config_path = tmp_path / ".whisper"
@@ -42,3 +68,13 @@ def test_dot_notation_access(user_config):
     assert user_config.get_by_dot_notation("openai.api_key") == "test-api-key"
     user_config.set_by_dot_notation("openai.api_key", "updated-api-key")
     assert user_config.openai.api_key == "updated-api-key"
+
+
+def test_config_exists(user_config):
+    assert user_config.config_exists()
+
+
+def test_initialize(user_config):
+    toml = user_config.initialize()
+
+    assert toml == expected_toml

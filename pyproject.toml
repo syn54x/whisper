@@ -46,6 +46,8 @@ dev-dependencies = [
     "mkdocs-material>=9.5.39",
     "mkdocs-jupyter>=0.25.0",
     "pytest>=8.3.3",
+    "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
 ]
 
 [tool.hatch.metadata]
@@ -56,7 +58,7 @@ packages = ["src/whisper"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra -q"
+addopts = "-ra -q --cov=src --cov-fail-under=80"
 testpaths = [
     "tests",
 ]

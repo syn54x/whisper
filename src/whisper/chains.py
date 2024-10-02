@@ -6,6 +6,7 @@ from langchain_mistralai import ChatMistralAI
 from langchain_core.prompts import ChatPromptTemplate
 from rich.panel import Panel
 from rich.markdown import Markdown
+from rich.syntax import Syntax
 
 
 from .settings import UserConfig
@@ -51,6 +52,18 @@ class CodeWhisper(BaseModel):
             Markdown(self.content, code_theme=theme),
             title=self.title or "Result",
             border_style="green",
+        )
+
+    @staticmethod
+    def render_syntax(
+        syntax: Syntax,
+        title: str,
+        border_style: str = "green",
+    ) -> Panel:
+        return Panel(
+            syntax,
+            title=title,
+            border_style=border_style,
         )
 
 

@@ -17,6 +17,9 @@ dependencies = [
     "toml>=0.10.2",
     "langchain-mistralai>=0.2.0",
     "langchain-fireworks>=0.2.0",
+    "langchain-mistralai>=0.2.0",
+    "langchain-fireworks>=0.2.0",
+    "clipboard>=0.0.4",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"

@@ -54,19 +54,8 @@ class CodeWhisper(BaseModel):
         )
 
 
-class ChainFactory:
-    def __init__(self, key: str = None, model: str = None):
-        self.config = UserConfig()
-
-    def create(self, key: str = None, model: str = None):
-        key = key or self.config.default
-        model = model or getattr(self.config, key).model
-
-        pass
-
-
 def create_chain(key: str = None, model: str = None):
-    key = key or config.default
+    key = key or config.default.config
     model = model or getattr(config, key).model
 
     if key == "openai":

@@ -39,10 +39,15 @@ class AzureOpenAIConfig(BaseModelConfig):
     model: str = "gpt-4o"
 
 
+class DefaultConfig(BaseModel):
+    config: str = "openai"
+    copy_snippet: bool = False
+
+
 class UserConfig(BaseSettings):
     model_config = SettingsConfigDict(toml_file=["~/.whisper/whisper.toml"])
 
-    default: str = "openai"
+    default: DefaultConfig = Field(default_factory=DefaultConfig)
 
     openai: OpenAIConfig = Field(default_factory=OpenAIConfig)
     anthropic: AnthropicConfig = Field(default_factory=AnthropicConfig)

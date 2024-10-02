@@ -2,6 +2,7 @@ from pydantic_core import ValidationError
 
 try:
     import typer
+    import clipboard
     from typing import Annotated
     from pathlib import Path
     from rich.console import Console
@@ -37,6 +38,9 @@ def ask(
             "-t", "--theme", help="The theme that should be used for the output"
         ),
     ] = "solarized-dark",
+    copy: Annotated[
+        bool, typer.Option("--copy/--no-copy", help="Copy the output to the clipboard")
+    ] = None,
 ):
     """
     The default command that takes a prompt and optional parameters to ask a question using Whisper.
@@ -46,6 +50,12 @@ def ask(
     with console.status("Thinking...", spinner="dots"):
         chain = create_chain(key, model)
         result = chain.invoke({"context": prompt})
+
+    if copy is not None:
+        if copy and result.snippet:
+            clipboard.copy(result.snippet)
+    elif config.default.copy and result.content:
+        clipboard.copy(result.content)
 
     panel = result.render(theme)
     console.print(panel)

@@ -3,8 +3,8 @@ import clipboard
 from typing import Annotated
 from pathlib import Path
 from rich.console import Console
-from rich.pretty import pprint
 from rich.syntax import Syntax
+from rich.text import Text
 from pygments.styles import get_all_styles
 
 from .custom_typer import Typer
@@ -60,7 +60,8 @@ def ask(
 @app.command()
 def themes():
     """Prints a list of available syntax highlighting themes from Pygments."""
-    pprint(list(get_all_styles()))
+    console = Console()
+    console.print(Text(", ".join(list(get_all_styles())), style="bold green"))
 
 
 @app.command()

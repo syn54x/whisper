@@ -73,7 +73,7 @@ class UserConfig(BaseSettings):
         setattr(v, keys[-1], value)
 
     def save(self):
-        path = Path.home() / ".whisper" / "whisper.toml"
+        path = Path(self.model_config["toml_file"][0])
         with path.open("w") as f:
             toml.dump(self.model_dump(), f)
 

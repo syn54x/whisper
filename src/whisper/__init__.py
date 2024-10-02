@@ -1,23 +1,17 @@
-from pydantic_core import ValidationError
+import typer
+import clipboard
+from typing import Annotated
+from pathlib import Path
+from rich.console import Console
+from rich.syntax import Syntax
+from rich.text import Text
+from pygments.styles import get_all_styles
 
-try:
-    import typer
-    from typing import Annotated
-    from pathlib import Path
-    from rich.console import Console
-    from rich.pretty import pprint
-    from rich import print
-    from pygments.styles import get_all_styles
+from .custom_typer import Typer
+from .chains import create_chain, CodeWhisper
+from .config import app as config_app
+from .settings import config, UserConfig
 
-    from .settings import UserConfig
-    from .custom_typer import Typer
-    from .chains import create_chain
-    from .config import app as config_app
-
-    config = UserConfig()
-
-except ValidationError:
-    print("[red]Please run `whisper init` to initialize the configuration.[/red]")
 
 app = Typer()
 
@@ -25,8 +19,11 @@ app = Typer()
 @app.command(default=True)
 def ask(
     prompt: Annotated[str, typer.Argument(help="The question you want to ask Whisper")],
-    key: Annotated[
-        str, typer.Option("-k", "--key", help="The API To use (openai, anthropic, etc)")
+    conf: Annotated[
+        str,
+        typer.Option(
+            "-c", "--config", help="The config to be used (openai, anthropic, etc)"
+        ),
     ] = None,
     model: Annotated[
         str, typer.Option("-m", "--model", help="The model that Whisper should use")
@@ -37,6 +34,9 @@ def ask(
             "-t", "--theme", help="The theme that should be used for the output"
         ),
     ] = "solarized-dark",
+    copy: Annotated[
+        bool, typer.Option("--copy/--no-copy", help="Copy the output to the clipboard")
+    ] = None,
 ):
     """
     The default command that takes a prompt and optional parameters to ask a question using Whisper.
@@ -44,8 +44,14 @@ def ask(
     console = Console(color_system="auto")
 
     with console.status("Thinking...", spinner="dots"):
-        chain = create_chain(key, model)
+        chain = create_chain(conf, model)
         result = chain.invoke({"context": prompt})
+
+    if copy is not None:
+        if copy and result.snippet:
+            clipboard.copy(result.snippet)
+    elif config.default.copy and result.content:
+        clipboard.copy(result.content)
 
     panel = result.render(theme)
     console.print(panel)
@@ -54,7 +60,8 @@ def ask(
 @app.command()
 def themes():
     """Prints a list of available syntax highlighting themes from Pygments."""
-    pprint(list(get_all_styles()))
+    console = Console()
+    console.print(Text(", ".join(list(get_all_styles())), style="bold green"))
 
 
 @app.command()
@@ -81,18 +88,23 @@ def init(
     """
     Initializes the configuration for Whisper, saving API keys to a local file.
     """
+    console = Console()
     config_path = Path.home() / ".whisper"
     config_path.mkdir(parents=True, exist_ok=True)
     config_file = config_path / "whisper.toml"
 
     with config_file.open("w") as f:
-        toml_str = UserConfig.initialize(openai_key, anthropic_key)
+        toml_str = UserConfig.initialize(
+            openai_key, anthropic_key, mistral_key, fireworks_key, azureopenai_key
+        )
         f.write(toml_str)
 
     if show:
-        print(toml_str)
+        syntax = Syntax(toml_str, "toml", theme=config.default.theme, padding=1)
+        panel = CodeWhisper.render_syntax(syntax, "Whisper Configuration")
+        console.print(panel)
 
-    print(f"Initialized whisper configuration in {config_file}")
+    console.print(f"[green]Initialized whisper configuration in {config_file}[/green]")
 
 
 app.add_typer(config_app, name="config")

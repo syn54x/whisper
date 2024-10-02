@@ -6,6 +6,7 @@ from langchain_mistralai import ChatMistralAI
 from langchain_core.prompts import ChatPromptTemplate
 from rich.panel import Panel
 from rich.markdown import Markdown
+from rich.syntax import Syntax
 
 
 from .settings import UserConfig
@@ -53,20 +54,21 @@ class CodeWhisper(BaseModel):
             border_style="green",
         )
 
-
-class ChainFactory:
-    def __init__(self, key: str = None, model: str = None):
-        self.config = UserConfig()
-
-    def create(self, key: str = None, model: str = None):
-        key = key or self.config.default
-        model = model or getattr(self.config, key).model
-
-        pass
+    @staticmethod
+    def render_syntax(
+        syntax: Syntax,
+        title: str,
+        border_style: str = "green",
+    ) -> Panel:
+        return Panel(
+            syntax,
+            title=title,
+            border_style=border_style,
+        )
 
 
 def create_chain(key: str = None, model: str = None):
-    key = key or config.default
+    key = key or config.default.config
     model = model or getattr(config, key).model
 
     if key == "openai":

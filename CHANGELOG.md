@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added support for Mistral, Fireworks and Azure OpenAI.
+- Added `--copy/--no-copy` option to the `ask` command to copy the output to the clipboard.
 
 ### Changed
 
@@ -32,6 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+
+- Better printing of the configuration file and themes.
 
 ### Security
 

@@ -119,5 +119,7 @@ UserConfig(
 If you found this project helpful, please consider supporting me by buying me a coffee.
 
 [PayPal.Me](https://paypal.me/syn54x?country.x=US&locale.x=en_US)
+
 ETH: `0x329941cDc2D84ddDf3c0b9dB9791bc787e64AE4E`
+
 BTC: `3AVY6ySYGVJJHFo3ebrNYx9oSmqShLYrz8`

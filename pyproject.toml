@@ -1,6 +1,6 @@
 [project]
 name = "just-whisper"
-version = "0.1.3"
+version = "0.1.4"
 description = "Whisper 🤫 sweet nothin's to your favorite LLM."
 authors = [
     { name = "Myg0t", email = "myg0tm3dia@gmail.com" }

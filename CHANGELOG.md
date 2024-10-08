@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated readme to inclue donation options :)
+- Updated the CLI command organization for the project.
+    - Command groups are contained inside the `cli` directory.
+    - The `ask` group is the "main" command with other commands nested below it.  This allows us to use `ask` as the default command if none is specified.
 
 ### Deprecated
 

@@ -9,6 +9,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [v0.1.5] - 2024-10-08
+
+### Added
+
+- Coverage shield is now in readme
+- Add `-s / --system` option to `ask` command to specify the system prompt.
+    - Allow piping content to Whisper as the `prompt` argument.
+    - e.g: `git diff | whisper -s "Describe these changes"`
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [v1.0.4] - 2024-10-07
+
+### Added
+
 - 80% test coverage.
 
 ### Changed
@@ -26,7 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [0.1.3] - 2024-08-01
+## [0.1.3] - 2024-10-01
 
 ### Added
 
@@ -46,7 +79,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
-## [0.1.2] - 2024-08-01
+## [0.1.2] - 2024-10-01
 
 ### Added
 
@@ -62,7 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [0.1.1] - 2024-08-01
+## [0.1.1] - 2024-10-01
 
 ### Added
 
@@ -84,7 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [0.1.0] - 2024-07-30
+## [0.1.0] - 2024-09-30
 
 ### Added
 

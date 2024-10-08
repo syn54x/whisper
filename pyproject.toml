@@ -1,6 +1,6 @@
 [project]
 name = "just-whisper"
-version = "0.1.4"
+version = "0.1.5"
 description = "Whisper 🤫 sweet nothin's to your favorite LLM."
 authors = [
     { name = "Myg0t", email = "myg0tm3dia@gmail.com" }
@@ -23,6 +23,15 @@ dependencies = [
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
+
+[project.optional-dependencies]
+openai = ["langchain-openai>=0.2.1"]
+anthropic = ["langchain-anthropic>=0.2.1"]
+mistral = ["langchain-mistralai>=0.2.0"]
+fireworks = ["langchain-fireworks>=0.2.0"]
+all = [
+    "just-whisper[openai,anthropic,mistral,fireworks]",
+]
 
 [project.scripts]
 "whisper" = "whisper:app"
@@ -48,6 +57,7 @@ dev-dependencies = [
     "pytest>=8.3.3",
     "pytest-cov>=5.0.0",
     "pytest-mock>=3.14.0",
+    "genbadge[all]>=1.1.1",
 ]
 
 [tool.hatch.metadata]

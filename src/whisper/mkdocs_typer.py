@@ -5,6 +5,7 @@ import xml.etree.ElementTree as etree
 from mkdocs.plugins import BasePlugin
 from mkdocs.config import config_options
 from markdown.inlinepatterns import InlineProcessor
+from genbadge.utils_coverage import get_coverage_stats
 
 
 class TyperExtension(markdown.Extension):
@@ -17,6 +18,7 @@ class TyperExtension(markdown.Extension):
         md.inlinePatterns.register(
             TyperPattern(r"::typer", md, cmd=self.cmd), "typer", 175
         )
+        md.inlinePatterns.register(CoveragePattern(r"::coverage", md), "coverage", 175)
 
 
 class TyperPattern(InlineProcessor):
@@ -32,6 +34,23 @@ class TyperPattern(InlineProcessor):
             return etree.fromstring(f"<div>{html_output}</div>"), m.start(0), m.end(0)
         else:
             return None, m.start(0), m.end(0)
+
+
+class CoveragePattern(InlineProcessor):
+    def __init__(self, *args, cmd: str = None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cmd = cmd
+
+    def handleMatch(self, m, data):
+        stats = get_coverage_stats("coverage.xml")
+
+        return (
+            etree.fromstring(
+                f'<img alt="Static Badge" src="https://img.shields.io/badge/coverage-{stats.total_coverage:.2f}%25-green" />'
+            ),
+            m.start(0),
+            m.end(0),
+        )
 
 
 def makeExtension(**kwargs):

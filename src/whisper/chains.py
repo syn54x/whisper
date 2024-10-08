@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator, ValidationInfo
+from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI, AzureChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_fireworks import ChatFireworks
@@ -14,12 +14,11 @@ from .settings import UserConfig
 config = UserConfig()
 
 
-TEMPLATE = ChatPromptTemplate.from_template(
-    """
-You are an AI assistant that can answer questions and help with tasks.
-
-{context}
-"""
+TEMPLATE = ChatPromptTemplate.from_messages(
+    [
+        ("system", "{system_prompt}"),
+        ("user", "{context}"),
+    ]
 )
 
 
@@ -37,15 +36,6 @@ class CodeWhisper(BaseModel):
     snippet: str | None = Field(
         description="The code snippet or terminal command if the prompt was code related"
     )
-
-    @field_validator("language", "snippet", mode="before")
-    @classmethod
-    def check_code_related_fields(cls, v: str, info: ValidationInfo):
-        if info.data.get("is_prompt_code_related") and not v:
-            raise ValueError(
-                f"The [{info.field_name}] must be provided if the prompt was code related"
-            )
-        return v
 
     def render(self: "CodeWhisper", theme: str = "solarized-dark") -> Panel:
         return Panel(

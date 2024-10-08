@@ -1,6 +1,6 @@
 import pytest
 from typer.testing import CliRunner
-from whisper import app
+from whisper.cli.ask import app
 from unittest.mock import patch, MagicMock
 
 runner = CliRunner()
@@ -16,7 +16,7 @@ def mock_chain():
     yield chain
 
 
-@patch("whisper.create_chain")
+@patch("whisper.cli.ask.create_chain")
 def test_ask_command(mock_create_chain, mock_chain):
     mock_create_chain.return_value = mock_chain
     result = runner.invoke(app, ["ask", "What is the weather today?"])
@@ -25,8 +25,8 @@ def test_ask_command(mock_create_chain, mock_chain):
     assert mock_create_chain.called
 
 
-@patch("whisper.clipboard.copy")
-@patch("whisper.create_chain")
+@patch("whisper.cli.ask.clipboard.copy")
+@patch("whisper.cli.ask.create_chain")
 def test_ask_command_with_copy(mock_create_chain, mock_clipboard, mock_chain):
     mock_create_chain.return_value = mock_chain
 

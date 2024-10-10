@@ -4,6 +4,7 @@ import typer
 import clipboard
 from typing import Annotated
 from rich.console import Console
+from rich.live import Live
 
 from ..settings import config
 from ..chains import create_chain
@@ -36,6 +37,9 @@ def ask(
             help="The system prompt to be used.  This can also be piped into Whisper...",
         ),
     ] = None,
+    stream: Annotated[
+        bool, typer.Option("--stream/--no-stream", help="Stream the output")
+    ] = False,
     model: Annotated[
         str, typer.Option("-m", "--model", help="The model that Whisper should use")
     ] = None,
@@ -73,15 +77,22 @@ def ask(
     LOGGER.debug(f"[bold]Using system prompt:[/bold] {system}")
     LOGGER.debug(f"[bold]Using prompt:[/bold] {prompt}")
 
-    with console.status("Thinking...", spinner="dots"):
+    with console.status("Thinking...", spinner="dots") as status:
         chain = create_chain(conf, model)
-        result = chain.invoke({"system_prompt": system, "context": prompt})
+        if stream:
+            with Live(status, refresh_per_second=0.001) as live:
+                for result in chain.stream(
+                    {"system_prompt": system, "context": prompt}
+                ):
+                    _panel = result.render(theme)
+                    live.update(_panel)
+        else:
+            result = chain.invoke({"system_prompt": system, "context": prompt})
+            panel = result.render(theme)
+            console.print(panel)
 
     if copy is not None:
         if copy and result.snippet:
             clipboard.copy(result.snippet)
     elif config.default.copy_snippet and result.content:
         clipboard.copy(result.content)
-
-    panel = result.render(theme)
-    console.print(panel)

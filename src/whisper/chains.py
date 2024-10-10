@@ -38,11 +38,13 @@ class CodeWhisper(BaseModel):
     )
 
     def render(self: "CodeWhisper", theme: str = "solarized-dark") -> Panel:
-        return Panel(
+        panel = Panel(
             Markdown(self.content, code_theme=theme),
             title=self.title or "Result",
             border_style="green",
         )
+
+        return panel
 
     @staticmethod
     def render_syntax(

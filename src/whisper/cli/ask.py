@@ -6,7 +6,7 @@ from typing import Annotated
 from rich.console import Console
 
 from ..settings import config
-from ..chains import create_chain
+from ..chains import create_chain, WhisperAPIKeyError
 from ..logging import LOGGER
 from .custom_typer import Typer
 
@@ -74,8 +74,12 @@ def ask(
     LOGGER.debug(f"[bold]Using prompt:[/bold] {prompt}")
 
     with console.status("Thinking...", spinner="dots"):
-        chain = create_chain(conf, model)
-        result = chain.invoke({"system_prompt": system, "context": prompt})
+        try:
+            chain = create_chain(conf, model)
+            result = chain.invoke({"system_prompt": system, "context": prompt})
+        except WhisperAPIKeyError as e:
+            console.print(e.markdown)
+            sys.exit(1)
 
     if copy is not None:
         if copy and result.snippet:

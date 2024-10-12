@@ -15,9 +15,11 @@ from pydantic_settings import (
     TomlConfigSettingsSource,
 )
 
+DEFAULT_API_KEY = "replace-me"
+
 
 class BaseModelConfig(BaseModel):
-    api_key: str = "replace-me"
+    api_key: str = DEFAULT_API_KEY
     model: str
 
 

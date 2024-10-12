@@ -9,7 +9,7 @@ from rich.markdown import Markdown
 from rich.syntax import Syntax
 
 
-from .settings import UserConfig
+from .settings import UserConfig, DEFAULT_API_KEY
 
 config = UserConfig()
 
@@ -57,9 +57,34 @@ class CodeWhisper(BaseModel):
         )
 
 
+class WhisperAPIKeyError(Exception):
+    """Exception raised for errors in the API key."""
+
+    def __init__(self, key: str):
+        self.key = key
+        self.message = f"API key for {key} not found, please set one up!"
+        self.markdown = Markdown(
+            f"""# API Key Error
+{self.message}
+
+You can set your API key by running:
+
+```bash
+whisper config set {key}.api_key YOUR_API_KEY
+```
+
+""",
+            code_theme=config.default.theme,
+        )
+        super().__init__(self.message)
+
+
 def create_chain(key: str = None, model: str = None):
     key = key or config.default.config
     model = model or getattr(config, key).model
+
+    if getattr(config, key).api_key == DEFAULT_API_KEY:
+        raise WhisperAPIKeyError(key)
 
     if key == "openai":
         return TEMPLATE | ChatOpenAI(

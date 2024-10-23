@@ -86,7 +86,7 @@ def test_config_exists(user_config):
 
 
 @patch("whisper.settings.platform.system")
-def test_initialize(mock_system, user_config):
+def test_initialize(mock_system, user_config, expected_toml):
     toml = user_config.initialize()
 
     assert toml == expected_toml

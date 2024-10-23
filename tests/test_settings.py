@@ -92,6 +92,4 @@ def test_initialize(mock_system, user_config, expected_toml):
     mock_system.return_value = "Darwin"
     toml = user_config.initialize()
 
-    print(expected_toml)
-    print(toml)
     assert toml == expected_toml

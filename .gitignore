@@ -8,8 +8,6 @@ wheels/
 
 # venv
 .venv
-demo.gif
-demo.yml
 requirements-dev.lock
 requirements.lock
 uv.lock

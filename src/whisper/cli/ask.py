@@ -22,10 +22,10 @@ def ask(
             default_factory=lambda: sys.stdin.read(),
         ),
     ],
-    conf: Annotated[
+    provider: Annotated[
         str,
         typer.Option(
-            "-c", "--config", help="The config to be used (openai, anthropic, etc)"
+            "-p", "--provider", help="The provider to be used (openai, anthropic, etc)"
         ),
     ] = None,
     system: Annotated[
@@ -57,7 +57,12 @@ def ask(
     The default command that takes a prompt and optional parameters to ask a question using Whisper.
     """
 
-    LOGGER.setLevel(logging.DEBUG if verbosity >= 2 else logging.INFO)
+    if verbosity == 0:
+        LOGGER.setLevel(logging.WARN)
+    elif verbosity == 1:
+        LOGGER.setLevel(logging.INFO)
+    elif verbosity >= 2:
+        LOGGER.setLevel(logging.DEBUG)
 
     system = (
         system
@@ -67,14 +72,14 @@ def ask(
     console = Console(color_system="auto")
 
     LOGGER.info("Running whisper ask...")
-    LOGGER.debug(f"[bold]Using config:[/bold] {conf}")
+    LOGGER.debug(f"[bold]Using config:[/bold] {provider}")
     LOGGER.debug(f"[bold]Using model:[/bold] {model}")
     LOGGER.debug(f"[bold]Using theme:[/bold] {theme}")
     LOGGER.debug(f"[bold]Using system prompt:[/bold] {system}")
     LOGGER.debug(f"[bold]Using prompt:[/bold] {prompt}")
 
     with console.status("Thinking...", spinner="dots"):
-        chain = create_chain(conf, model)
+        chain = create_chain(provider, model)
         result = chain.invoke({"system_prompt": system, "context": prompt})
 
     if copy is not None:

@@ -1,0 +1,251 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/markjtaylorroberts
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 78
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 20
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Whisper
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 389
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                             \r \r"
+  - delay: 13
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=89153\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys021\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 13
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[75C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[75D\e[?2004h"
+  - delay: 40
+    content: "\r\r\e[A\e[A\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[75C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[75D"
+  - delay: 610
+    content: "\e[32mw\e[39m"
+  - delay: 80
+    content: "\b\e[1m\e[31mw\e[1m\e[31mh\e[0m\e[39m"
+  - delay: 59
+    content: "\b\b\e[1m\e[31mw\e[1m\e[31mh\e[1m\e[31mi\e[0m\e[39m"
+  - delay: 93
+    content: "\b\e[1m\e[31mi\e[1m\e[31ms\e[0m\e[39m"
+  - delay: 108
+    content: "\b\e[1m\e[31ms\e[1m\e[31mp\e[0m\e[39m"
+  - delay: 150
+    content: "\b\e[1m\e[31mp\e[1m\e[31me\e[0m\e[39m"
+  - delay: 100
+    content: "\b\b\b\b\b\b\e[0m\e[32mw\e[0m\e[32mh\e[0m\e[32mi\e[0m\e[32ms\e[0m\e[32mp\e[0m\e[32me\e[32mr\e[39m"
+  - delay: 72
+    content: ' '
+  - delay: 185
+    content: "\e[33m\"\e[39m"
+  - delay: 569
+    content: "\b\e[33m\"\e[33mW\e[39m"
+  - delay: 159
+    content: "\b\e[33mW\e[33mh\e[39m"
+  - delay: 81
+    content: "\b\e[33mh\e[33ma\e[39m"
+  - delay: 97
+    content: "\b\e[33ma\e[33mt\e[39m"
+  - delay: 60
+    content: "\b\e[33mt\e[33m \e[39m"
+  - delay: 90
+    content: "\b\e[33m \e[33mi\e[39m"
+  - delay: 16
+    content: "\e[90ms the capital of france?\" -m gpt-3.5-turbo\e[39m\e[42D"
+  - delay: 192
+    content: "\b\e[33mi\e[33ms\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[41D\e[90m the capital of france?\" -m gpt-3.5-turbo\e[39m\e[41D"
+  - delay: 225
+    content: "\b\e[33ms\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[40D\e[90mthe capital of france?\" -m gpt-3.5-turbo\e[39m\e[40D"
+  - delay: 233
+    content: "\b\e[33m \e[33mh\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39D"
+  - delay: 401
+    content: "\b\b\e[33m \e[39m\e[39m \b"
+  - delay: 19
+    content: "\e[90mthe capital of france?\" -m gpt-3.5-turbo\e[39m\e[40D"
+  - delay: 89
+    content: "\b\e[33m \e[33mt\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39D\e[90mhe capital of france?\" -m gpt-3.5-turbo\e[39m\e[39D"
+  - delay: 190
+    content: "\b\e[33mt\e[33mh\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[38D\e[90me capital of france?\" -m gpt-3.5-turbo\e[39m\e[38D"
+  - delay: 176
+    content: "\b\e[33mh\e[33me\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[37D\e[90m capital of france?\" -m gpt-3.5-turbo\e[39m\e[37D"
+  - delay: 117
+    content: "\b\e[33me\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[36D\e[90mcapital of france?\" -m gpt-3.5-turbo\e[39m\e[36D"
+  - delay: 115
+    content: "\b\e[33m \e[33mc\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[35D\e[90mapital of france?\" -m gpt-3.5-turbo\e[39m\e[35D"
+  - delay: 104
+    content: "\b\e[33mc\e[33ma\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[34D\e[90mpital of france?\" -m gpt-3.5-turbo\e[39m\e[34D"
+  - delay: 76
+    content: "\b\e[33ma\e[33mp\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[33D\e[90mital of france?\" -m gpt-3.5-turbo\e[39m\e[33D"
+  - delay: 42
+    content: "\b\e[33mp\e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[32D\e[90mtal of france?\" -m gpt-3.5-turbo\e[39m\e[32D"
+  - delay: 119
+    content: "\b\e[33mi\e[33mt\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[31D\e[90mal of france?\" -m gpt-3.5-turbo\e[39m\e[31D"
+  - delay: 67
+    content: "\b\e[33mt\e[33ma\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[30D\e[90ml of france?\" -m gpt-3.5-turbo\e[39m\e[30D"
+  - delay: 65
+    content: "\b\e[33ma\e[33ml\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[29D\e[90m of france?\" -m gpt-3.5-turbo\e[39m\e[29D"
+  - delay: 126
+    content: "\b\e[33ml\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[28D\e[90mof france?\" -m gpt-3.5-turbo\e[39m\e[28D"
+  - delay: 105
+    content: "\b\e[33m \e[33mo\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[27D\e[90mf france?\" -m gpt-3.5-turbo\e[39m\e[27D"
+  - delay: 95
+    content: "\b\e[33mo\e[33mf\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[26D\e[90m france?\" -m gpt-3.5-turbo\e[39m\e[26D"
+  - delay: 136
+    content: "\b\e[33mf\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[25D\e[90mfrance?\" -m gpt-3.5-turbo\e[39m\e[25D"
+  - delay: 99
+    content: "\b\e[33m \e[33mf\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[24D\e[90mrance?\" -m gpt-3.5-turbo\e[39m\e[24D"
+  - delay: 170
+    content: "\b\e[33mf\e[33mr\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[23D\e[90mance?\" -m gpt-3.5-turbo\e[39m\e[23D"
+  - delay: 79
+    content: "\b\e[33mr\e[33ma\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[22D\e[90mnce?\" -m gpt-3.5-turbo\e[39m\e[22D"
+  - delay: 87
+    content: "\b\e[33ma\e[33mn\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[21D\e[90mce?\" -m gpt-3.5-turbo\e[39m\e[21D"
+  - delay: 102
+    content: "\b\e[33mn\e[33mc\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[20D\e[90me?\" -m gpt-3.5-turbo\e[39m\e[20D"
+  - delay: 76
+    content: "\b\e[33mc\e[33me\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[19D\e[90m?\" -m gpt-3.5-turbo\e[39m\e[19D"
+  - delay: 185
+    content: "\b\e[33me\e[33m?\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[18D\e[90m\" -m gpt-3.5-turbo\e[39m\e[18D"
+  - delay: 146
+    content: "\b\e[33m?\e[33m\"\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[17D\e[90m -m gpt-3.5-turbo\e[39m\e[17D"
+  - delay: 200
+    content: "\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[16D\e[90m-m gpt-3.5-turbo\e[39m\e[16D"
+  - delay: 799
+    content: "\e[36m-\e[36mm\e[39m\e[39m \e[39mg\e[39mp\e[39mt\e[39m-\e[39m3\e[39m.\e[39m5\e[39m-\e[39mt\e[39mu\e[39mr\e[39mb\e[39mo\e[15D\e[15C"
+  - delay: 258
+    content: "\e[?2004l\r\r\n\e]697;OSCLock=850c687983064410a2e78e727f302eb1\a\e]697;PreExec\a"
+  - delay: 1008
+    content: "\e[?25l"
+  - delay: 83
+    content: "\e[32m⠋\e[0m Thinking..."
+  - delay: 81
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 81
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠴\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠦\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠧\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠇\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠏\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠋\e[0m Thinking..."
+  - delay: 47
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking...\r\n\e[?25h\r\e[1A\e[2K"
+  - delay: 21
+    content: "\e[32m╭─\e[0m\e[32m───────────────────────────\e[0m\e[32m Capital of France \e[0m\e[32m────────────────────────────\e[0m\e[32m─╮\e[0m\r\n\e[32m│\e[0m The capital of France is Paris.                                            \e[32m│\e[0m\r\n\e[32m╰────────────────────────────────────────────────────────────────────────────╯\e[0m\r\n"
+  - delay: 138
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                             \r \r"
+  - delay: 9
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=89153\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys021\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 13
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m took \e[1;33m2s\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[75C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[75D\e[?2004h"
+  - delay: 1738
+    content: "\e[?2004l\r\r\n"

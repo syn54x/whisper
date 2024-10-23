@@ -53,7 +53,7 @@ def test_ask_command_with_options(mock_logger, mock_create_chain, mock_chain):
         [
             "ask",
             "What is the weather today?",
-            "--config",
+            "--provider",
             "openai",
             "--system",
             "You are a weather expert",

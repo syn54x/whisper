@@ -53,6 +53,7 @@ def make_local_path():
     ref: https://docs.gpt4all.io/gpt4all_desktop/settings.html#application-settings
     """
     system = platform.system()
+    print(system)
     if system == "Windows":
         return str(
             (Path.home() / "AppData" / "Local" / "nomic.ai" / "GPT4All").resolve()

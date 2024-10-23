@@ -6,7 +6,9 @@ from whisper.settings import UserConfig, make_local_path
 
 
 @pytest.fixture
-def expected_toml():
+@patch("whisper.settings.platform.system")
+def expected_toml(mock_system):
+    mock_system.return_value = "Darwin"
     return f"""[default]
 provider = "openai"
 theme = "solarized-dark"

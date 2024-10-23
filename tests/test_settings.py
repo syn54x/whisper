@@ -1,5 +1,6 @@
-from pydantic_settings import SettingsConfigDict
 import pytest
+from unittest.mock import patch
+from pydantic_settings import SettingsConfigDict
 from pathlib import Path
 from whisper.settings import UserConfig
 
@@ -82,7 +83,9 @@ def test_config_exists(user_config):
     assert user_config.config_exists()
 
 
-def test_initialize(user_config):
+@patch("whisper.settings.platform.system")
+def test_initialize(mock_system, user_config):
+    mock_system.return_value = "Darwin"
     toml = user_config.initialize()
 
     assert toml == expected_toml

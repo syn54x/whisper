@@ -1,12 +1,21 @@
-from pydantic_settings import SettingsConfigDict
 import pytest
+from unittest.mock import patch
+from pydantic_settings import SettingsConfigDict
 from pathlib import Path
-from whisper.settings import UserConfig
+from whisper.settings import UserConfig, make_local_path
 
 
-expected_toml = """[default]
+@pytest.fixture
+@patch("whisper.settings.platform.system")
+def expected_toml(mock_system):
+    mock_system.return_value = "Darwin"
+    return f"""[default]
 provider = "openai"
 theme = "solarized-dark"
+
+[gpt4all]
+local_path = "{make_local_path()}"
+local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
 
 [openai]
 api_key = "replace-me"
@@ -41,6 +50,10 @@ def user_config(tmp_path):
     provider = "openai"
     theme = "solarized-dark"
 
+    [gpt4all]
+    local_path = "/Users/markjtaylorroberts/Library/Application Support/nomic.ai/GPT4All"
+    local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
+
     [openai]
     api_key = "test-api-key"
     model = "gpt-3.5-turbo"
@@ -74,7 +87,9 @@ def test_config_exists(user_config):
     assert user_config.config_exists()
 
 
-def test_initialize(user_config):
+@patch("whisper.settings.platform.system")
+def test_initialize(mock_system, user_config, expected_toml):
+    mock_system.return_value = "Darwin"
     toml = user_config.initialize()
 
     assert toml == expected_toml

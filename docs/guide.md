@@ -7,7 +7,7 @@ Below is a guide to help you get the most out of Whisper.
 The first thing you should do is setup your config by running
 
 ```bash
-whisper config init
+❯whisper config init
 ```
 
 This will create a `whisper.toml` file in the `~/.whisper` directory.  You can then edit this file to set the API keys for the different LLM providers you want to use.
@@ -17,13 +17,13 @@ This will create a `whisper.toml` file in the `~/.whisper` directory.  You can t
 You can always edit the `whisper.toml` file directly to change your config.  But you can also use the `whisper config set` command to change the config.  For example, to change the API key for the OpenAI provider, you can run:
 
 ```bash
-whisper config set openai.api_key YOUR_API_KEY
+❯ whisper config set openai.api_key YOUR_API_KEY
 ```
 
 Or, if you have your key stored in an environment variable, you can run:
 
 ```bash
-whisper config set openai.api_key $YOUR_API_KEY
+❯whisper config set openai.api_key $YOUR_API_KEY
 ```
 
 ### Read A Config Value
@@ -31,7 +31,7 @@ whisper config set openai.api_key $YOUR_API_KEY
 You can read a config value by running `whisper config get <key>`.  For example, to read the API key for the OpenAI provider, you can run:
 
 ```bash
-whisper config get openai.api_key
+❯ whisper config get openai.api_key
 ```
 
 ### Show All Config Values
@@ -42,6 +42,17 @@ You can show all the config values by running `whisper config show`.
 
 You can list all the available code themes by running `whisper config themes`.
 
+### Local Models With GPT4All
+
+Whisper supports using local models via GPT4All.  To use a local model, you can set the `local_path` and `local_model` for the `gpt4all` provider in the `whisper.toml` file.  For example:
+
+```toml
+[gpt4all]
+local_path = "~/.local/share/nomic.ai/GPT4All"
+local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
+```
+
+If you're unfamiliar with GPT4All, you can learn more [here](https://gpt4all.io/).
 
 ## Asking Questions
 
@@ -65,6 +76,12 @@ Or even simpler, the CLI defaults to the `ask` sub-command, so you can simply ru
 You're config file defaults to using the OpenAI provider.  But you can change that with the `-p/--provider` option.  For example, to use the Anthropic provider, you can run:
 
 ![Different Provider](./assets/using_a_different_provider.gif)
+
+You can also change the default provider in the `whisper.toml` file, or by running:
+
+```bash
+❯ whisper config set default.provider "anthropic"
+```
 
 ### Using A Different Model
 
@@ -113,6 +130,12 @@ whisper config set default.theme "coffee"
 You can copy a snippet to your clipboard using the `--copy` option.  For example:
 
 ![Copy Snippet](./assets/copy_a_snippet.gif)
+
+You can also change the default behavior of whether or not to copy a snippet by setting the `copy_snippet` option in the `whisper.toml` file, or by running:
+
+```bash
+❯ whisper config set default.copy_snippet true
+```
 
 ### Using The System Prompt
 

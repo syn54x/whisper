@@ -19,7 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [0.1.6] - 2024-10-22
+## [0.1.6] - TBD
+
+### Added
+
+- Add support for local models via GPT4All.
 
 ### Changed
 

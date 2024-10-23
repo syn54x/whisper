@@ -1,0 +1,211 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/markjtaylorroberts
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 82
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 20
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Whisper
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 399
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                 \r \r"
+  - delay: 13
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=87056\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys018\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 12
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D\e[?2004h"
+  - delay: 42
+    content: "\r\r\e[A\e[A\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D"
+  - delay: 1201
+    content: "\e[32mw\e[39m"
+  - delay: 99
+    content: "\b\e[1m\e[31mw\e[1m\e[31mh\e[0m\e[39m"
+  - delay: 161
+    content: "\b\b\e[1m\e[31mw\e[1m\e[31mh\e[1m\e[31ms\e[0m\e[39m"
+  - delay: 502
+    content: "\b\b\b\e[1m\e[31mw\e[1m\e[31mh\e[0m\e[39m\e[0m\e[39m \b"
+  - delay: 187
+    content: "\b\b\e[1m\e[31mw\e[1m\e[31mh\e[1m\e[31mi\e[0m\e[39m"
+  - delay: 570
+    content: "\b\e[1m\e[31mi\e[1m\e[31ms\e[0m\e[39m"
+  - delay: 114
+    content: "\b\e[1m\e[31ms\e[1m\e[31mp\e[0m\e[39m"
+  - delay: 145
+    content: "\b\e[1m\e[31mp\e[1m\e[31me\e[0m\e[39m"
+  - delay: 20
+    content: "\e[90mr \"How do I sort a list in python?\"\e[39m\e[35D"
+  - delay: 64
+    content: "\b\b\b\b\b\b\e[0m\e[32mw\e[0m\e[32mh\e[0m\e[32mi\e[0m\e[32ms\e[0m\e[32mp\e[0m\e[32me\e[32mr\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[34D\e[90m \"How do I sort a list in python?\"\e[39m\e[34D"
+  - delay: 121
+    content: "\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[33D\e[90m\"How do I sort a list in python?\"\e[39m\e[33D"
+  - delay: 206
+    content: "\e[33m\"\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[32D\e[90mHow do I sort a list in python?\"\e[39m\e[32D"
+  - delay: 1085
+    content: "\b\e[33m\"\e[33mH\e[33mo\e[33mw\e[33m \e[33md\e[33mo\e[33m \e[33mI\e[33m \e[33ms\e[33mo\e[33mr\e[33mt\e[33m \e[33ma\e[33m \e[33ml\e[33mi\e[33ms\e[33mt\e[33m \e[33mi\e[33mn\e[33m \e[33mp\e[33my\e[33mt\e[33mh\e[33mo\e[33mn\e[33m?\e[33m\"\e[39m\e[31D\e[31C"
+  - delay: 416
+    content: "\e[?2004l\r\r\n\e]697;OSCLock=850c687983064410a2e78e727f302eb1\a\e]697;PreExec\a"
+  - delay: 935
+    content: "\e[?25l"
+  - delay: 83
+    content: "\e[32m⠋\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 84
+    content: "\r\e[2K\e[32m⠴\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠦\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠧\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠇\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠏\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠋\e[0m Thinking..."
+  - delay: 87
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 81
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠴\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠦\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠇\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠏\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠋\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 82
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 22
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking...\r\n\e[?25h\r\e[1A\e[2K"
+  - delay: 49
+    content: "\e[32m╭─\e[0m\e[32m──────────────────────────\e[0m\e[32m Sorting a list in Python \e[0m\e[32m──────────────────────────\e[0m\e[32m─╮\e[0m\r\n\e[32m│\e[0m You can sort a list in Python using the \e[1;36;40msort()\e[0m method or the \e[1;36;40msorted()\e[0m          \e[32m│\e[0m\r\n\e[32m│\e[0m function. Here's an example using both methods:                                \e[32m│\e[0m\r\n\e[32m│\e[0m                                                                                \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m                                                                              \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[3;38;2;88;110;117;48;2;0;43;54m# Using sort() method\e[0m\e[48;2;0;43;54m                                                       \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54mmy_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;88;110;117;48;2;0;43;54m=\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54m[\e[0m\e[38;2;42;161;152;48;2;0;43;54m3\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m1\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m4\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m1\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m5\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m9\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m2\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m6\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m5\e[0m\e[38;2;131;148;150;48;2;0;43;54m]\e[0m\e[48;2;0;43;54m                                       \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54mmy_list\e[0m\e[38;2;88;110;117;48;2;0;43;54m.\e[0m\e[38;2;131;148;150;48;2;0;43;54msort\e[0m\e[38;2;131;148;150;48;2;0;43;54m(\e[0m\e[38;2;131;148;150;48;2;0;43;54m)\e[0m\e[48;2;0;43;54m                                                              \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;38;139;210;48;2;0;43;54mprint\e[0m\e[38;2;131;148;150;48;2;0;43;54m(\e[0m\e[38;2;131;148;150;48;2;0;43;54mmy_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m)\e[0m\e[48;2;0;43;54m                                                              \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[48;2;0;43;54m                                                                            \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[3;38;2;88;110;117;48;2;0;43;54m# Using sorted() function\e[0m\e[48;2;0;43;54m                                                   \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54mmy_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;88;110;117;48;2;0;43;54m=\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54m[\e[0m\e[38;2;42;161;152;48;2;0;43;54m3\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m1\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m4\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m1\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m5\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m9\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m2\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m6\e[0m\e[38;2;131;148;150;48;2;0;43;54m,\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;42;161;152;48;2;0;43;54m5\e[0m\e[38;2;131;148;150;48;2;0;43;54m]\e[0m\e[48;2;0;43;54m                                       \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;131;148;150;48;2;0;43;54msorted_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;88;110;117;48;2;0;43;54m=\e[0m\e[38;2;131;148;150;48;2;0;43;54m \e[0m\e[38;2;38;139;210;48;2;0;43;54msorted\e[0m\e[38;2;131;148;150;48;2;0;43;54m(\e[0m\e[38;2;131;148;150;48;2;0;43;54mmy_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m)\e[0m\e[48;2;0;43;54m                                               \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m \e[0m\e[38;2;38;139;210;48;2;0;43;54mprint\e[0m\e[38;2;131;148;150;48;2;0;43;54m(\e[0m\e[38;2;131;148;150;48;2;0;43;54msorted_list\e[0m\e[38;2;131;148;150;48;2;0;43;54m)\e[0m\e[48;2;0;43;54m                                                          \e[0m\e[48;2;0;43;54m \e[0m \e[32m│\e[0m\r\n\e[32m│\e[0m \e[48;2;0;43;54m                                                                              \e[0m \e[32m│\e[0m\r\n\e[32m╰────────────────────────────────────────────────────────────────────────────────╯\e[0m\r\n"
+  - delay: 129
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                 \r \r"
+  - delay: 9
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=87056\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys018\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 13
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m took \e[1;33m3s\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D\e[?2004h"
+  - delay: 1505
+    content: "\e[?2004l\r\r\n"

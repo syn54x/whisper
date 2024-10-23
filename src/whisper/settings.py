@@ -43,7 +43,7 @@ class AzureOpenAIConfig(BaseModelConfig):
 
 class DefaultConfig(BaseModel):
     copy_snippet: bool | None = None
-    config: str = "openai"
+    provider: str = "openai"
     theme: str | None = "solarized-dark"
 
 
@@ -74,7 +74,7 @@ class UserConfig(BaseSettings):
 
     def save(self):
         path = Path(self.model_config["toml_file"][0])
-        with path.open("w") as f:
+        with path.expanduser().open("w") as f:
             toml.dump(self.model_dump(), f)
 
     @classmethod

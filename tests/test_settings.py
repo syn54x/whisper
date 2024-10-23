@@ -5,7 +5,7 @@ from whisper.settings import UserConfig
 
 
 expected_toml = """[default]
-config = "openai"
+provider = "openai"
 theme = "solarized-dark"
 
 [openai]
@@ -38,7 +38,7 @@ def user_config(tmp_path):
     config_file.write_text("""
     [default]
     copy_snippet = true
-    config = "openai"
+    provider = "openai"
     theme = "solarized-dark"
 
     [openai]

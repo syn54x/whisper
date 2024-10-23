@@ -14,7 +14,7 @@ provider = "openai"
 theme = "solarized-dark"
 
 [gpt4all]
-local_path = {make_local_path()}
+local_path = "{make_local_path()}"
 local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
 
 [openai]

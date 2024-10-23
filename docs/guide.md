@@ -42,6 +42,17 @@ You can show all the config values by running `whisper config show`.
 
 You can list all the available code themes by running `whisper config themes`.
 
+### Local Models With GPT4All
+
+Whisper supports using local models via GPT4All.  To use a local model, you can set the `local_path` and `local_model` for the `gpt4all` provider in the `whisper.toml` file.  For example:
+
+```toml
+[gpt4all]
+local_path = "~/.local/share/nomic.ai/GPT4All"
+local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
+```
+
+If you're unfamiliar with GPT4All, you can learn more [here](https://gpt4all.io/).
 
 ## Asking Questions
 

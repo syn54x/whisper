@@ -20,7 +20,7 @@ def mock_chain():
 @patch("whisper.cli.ask.create_chain")
 @patch("whisper.cli.ask.LOGGER")
 def test_ask_command(mock_logger, mock_create_chain, mock_chain):
-    mock_create_chain.return_value = mock_chain
+    mock_create_chain.return_value = (mock_chain, None)
     result = runner.invoke(app, ["ask", "What is the weather today?"])
 
     assert "Test response" in result.stdout
@@ -35,7 +35,7 @@ def test_ask_command(mock_logger, mock_create_chain, mock_chain):
 def test_ask_command_with_copy(
     mock_logger, mock_create_chain, mock_clipboard, mock_chain
 ):
-    mock_create_chain.return_value = mock_chain
+    mock_create_chain.return_value = (mock_chain, None)
 
     result = runner.invoke(app, ["ask", "What is the weather today?", "--copy"])
     mock_clipboard.assert_called_with("Test snippet")
@@ -47,7 +47,7 @@ def test_ask_command_with_copy(
 @patch("whisper.cli.ask.create_chain")
 @patch("whisper.cli.ask.LOGGER")
 def test_ask_command_with_options(mock_logger, mock_create_chain, mock_chain):
-    mock_create_chain.return_value = mock_chain
+    mock_create_chain.return_value = (mock_chain, None)
     result = runner.invoke(
         app,
         [

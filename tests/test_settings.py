@@ -8,6 +8,10 @@ expected_toml = """[default]
 provider = "openai"
 theme = "solarized-dark"
 
+[gpt4all]
+local_path = "/Users/markjtaylorroberts/Library/Application Support/nomic.ai/GPT4All"
+local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
+
 [openai]
 api_key = "replace-me"
 model = "gpt-3.5-turbo"
@@ -40,6 +44,10 @@ def user_config(tmp_path):
     copy_snippet = true
     provider = "openai"
     theme = "solarized-dark"
+
+    [gpt4all]
+    local_path = "/Users/markjtaylorroberts/Library/Application Support/nomic.ai/GPT4All"
+    local_model = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
 
     [openai]
     api_key = "test-api-key"

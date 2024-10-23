@@ -79,8 +79,13 @@ def ask(
     LOGGER.debug(f"[bold]Using prompt:[/bold] {prompt}")
 
     with console.status("Thinking...", spinner="dots"):
-        chain = create_chain(provider, model)
-        result = chain.invoke({"system_prompt": system, "context": prompt})
+        chain, parser = create_chain(provider, model)
+        if parser:
+            system = f"{system}\n\n{parser.get_format_instructions()}"
+            response = chain.invoke({"system_prompt": system, "context": prompt})
+            result = parser.parse(response)
+        else:
+            result = chain.invoke({"system_prompt": system, "context": prompt})
 
     if copy is not None:
         if copy and result.snippet:

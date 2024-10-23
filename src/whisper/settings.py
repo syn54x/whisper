@@ -1,5 +1,6 @@
 from inspect import isclass
 import toml
+import platform
 
 from pathlib import Path
 from typing import Type, Tuple
@@ -47,11 +48,46 @@ class DefaultConfig(BaseModel):
     theme: str | None = "solarized-dark"
 
 
+def make_local_path():
+    """
+    ref: https://docs.gpt4all.io/gpt4all_desktop/settings.html#application-settings
+    """
+    system = platform.system()
+    if system == "Windows":
+        return str(
+            (Path.home() / "AppData" / "Local" / "nomic.ai" / "GPT4All").resolve()
+        )
+    elif system == "Darwin":
+        return str(
+            (
+                Path.home() / "Library" / "Application Support" / "nomic.ai" / "GPT4All"
+            ).resolve()
+        )
+    elif system == "Linux":
+        return str(
+            (Path.home() / ".local" / "share" / "nomic.ai" / "GPT4All").resolve()
+        )
+
+
+class LocalModelConfig(BaseModel):
+    local_path: str = Field(default_factory=make_local_path)
+    local_model: str = "Meta-Llama-3-8B-Instruct.Q4_0.gguf"
+
+    @property
+    def model(self):
+        return f"{self.local_path}/{self.local_model}"
+
+
+class GPT4AllConfig(LocalModelConfig):
+    pass
+
+
 class UserConfig(BaseSettings):
     model_config = SettingsConfigDict(toml_file=["~/.whisper/whisper.toml"])
 
     default: DefaultConfig = Field(default_factory=DefaultConfig)
 
+    gpt4all: GPT4AllConfig = Field(default_factory=GPT4AllConfig)
     openai: OpenAIConfig = Field(default_factory=OpenAIConfig)
     anthropic: AnthropicConfig = Field(default_factory=AnthropicConfig)
     mistral: MistralAIConfig = Field(default_factory=MistralAIConfig)
@@ -113,6 +149,8 @@ class UserConfig(BaseSettings):
                     data[key] = recurse_fields(field.annotation.model_fields)
                 elif not isinstance(field.default, PydanticUndefinedType):
                     data[key] = field.default
+                elif not isinstance(field.default_factory, PydanticUndefinedType):
+                    data[key] = field.default_factory()
             return data
 
         config_data = recurse_fields(cls.model_fields)

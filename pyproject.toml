@@ -10,16 +10,16 @@ dependencies = [
     "rich>=13.8.1",
     "langchain>=0.3.1",
     "langchain-core>=0.3.6",
+    "langchain-community>=0.3.1",
     "pydantic>=2.9.2",
     "pydantic-settings>=2.5.2",
+    "toml>=0.10.2",
+    "clipboard>=0.0.4",
     "langchain-openai>=0.2.1",
     "langchain-anthropic>=0.2.1",
-    "toml>=0.10.2",
     "langchain-mistralai>=0.2.0",
     "langchain-fireworks>=0.2.0",
-    "langchain-mistralai>=0.2.0",
-    "langchain-fireworks>=0.2.0",
-    "clipboard>=0.0.4",
+    "gpt4all>=2.8.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
@@ -29,8 +29,9 @@ openai = ["langchain-openai>=0.2.1"]
 anthropic = ["langchain-anthropic>=0.2.1"]
 mistral = ["langchain-mistralai>=0.2.0"]
 fireworks = ["langchain-fireworks>=0.2.0"]
+gpt4all = ["gpt4all>=2.8.2"]
 all = [
-    "just-whisper[openai,anthropic,mistral,fireworks]",
+    "just-whisper[openai,anthropic,mistral,fireworks,gpt4all]",
 ]
 
 [project.scripts]

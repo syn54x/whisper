@@ -11,3 +11,4 @@ wheels/
 requirements-dev.lock
 requirements.lock
 uv.lock
+.DS_Store

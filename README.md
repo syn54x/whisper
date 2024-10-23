@@ -16,7 +16,7 @@
 
 | Provider Name                | Supported by Whisper | Config Key |
 |------------------------------|----------------------|------------|
-| GPT4ALL                      | ✅                   | gpt4all    |
+| GPT4All                      | ✅                   | gpt4all    |
 | ChatAnthropic                | ✅                   | anthropic  |
 | ChatMistralAI                | ✅                   | mistral    |
 | ChatFireworks                | ✅                   | fireworks  |

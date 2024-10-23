@@ -1,0 +1,299 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/markjtaylorroberts
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 82
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 24
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Whisper
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 384
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                 \r \r"
+  - delay: 13
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=479\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys021\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 11
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D\e[?2004h"
+  - delay: 39
+    content: "\r\r\e[A\e[A\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D"
+  - delay: 3307
+    content: "\e[1m\e[31mc\e[0m\e[39m"
+  - delay: 54
+    content: "\b\e[0m\e[32mc\e[32mu\e[39m"
+  - delay: 160
+    content: "\b\b\e[1m\e[31mc\e[1m\e[31mu\e[1m\e[31mr\e[0m\e[39m"
+  - delay: 99
+    content: "\b\b\b\e[0m\e[32mc\e[0m\e[32mu\e[0m\e[32mr\e[32ml\e[39m"
+  - delay: 97
+    content: ' '
+  - delay: 4212
+    content: "https://raw.githubusercontent.com/syn54x/whisper/refs/heads/main/src/whisper/settings.py\e[K"
+  - delay: 945
+    content: "\e[90m \\                                                                   \e[90m|\e[90m whisper -s \"What is happening in this code?\"\e[39m\e[K\e[A\e[33D"
+  - delay: 368
+    content: "\e[K\e[1B\r\e[K\e[A\e[14C\e[90m\\                                                                   \e[90m|\e[90m whisper -s \"What is happening in this code?\"\e[39m\e[K\e[A\e[32D"
+  - delay: 276
+    content: "\e[39m|\e[K\e[1B\r\e[K\e[A\e[15C"
+  - delay: 127
+    content: ' '
+  - delay: 234
+    content: "\e[32mw\e[39m"
+  - delay: 72
+    content: "\b\e[1m\e[31mw\e[1m\e[31mh\e[0m\e[39m"
+  - delay: 84
+    content: "\b\e[1m\e[31mh\e[1m\e[31mi\e[0m\e[39m"
+  - delay: 78
+    content: "\b\e[1m\e[31mi\e[1m\e[31ms\e[0m\e[39m"
+  - delay: 108
+    content: "\b\e[1m\e[31ms\e[1m\e[31mp\e[0m\e[39m"
+  - delay: 107
+    content: "\b\e[1m\e[31mp\e[1m\e[31me\e[0m\e[39m"
+  - delay: 81
+    content: "\b\b\b\b\b\b\e[0m\e[32mw\e[0m\e[32mh\e[0m\e[32mi\e[0m\e[32ms\e[0m\e[32mp\e[0m\e[32me\e[32mr\e[39m"
+  - delay: 108
+    content: ' '
+  - delay: 231
+    content: "\e[36m-\e[39m"
+  - delay: 182
+    content: "\b\e[36m-\e[36ms\e[39m"
+  - delay: 597
+    content: ' '
+  - delay: 246
+    content: "\e[33m\"\e[39m"
+  - delay: 23
+    content: "\e[90mWhat is happening in this code?\"\e[39m\e[32D"
+  - delay: 170
+    content: "\b\e[33m\"\e[33mW\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[31D\e[90mhat is happening in this code?\"\e[39m\e[31D"
+  - delay: 177
+    content: "\b\e[33mW\e[33mh\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[30D\e[90mat is happening in this code?\"\e[39m\e[30D"
+  - delay: 75
+    content: "\b\e[33mh\e[33ma\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[29D\e[90mt is happening in this code?\"\e[39m\e[29D"
+  - delay: 80
+    content: "\b\e[33ma\e[33mt\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[28D\e[90m is happening in this code?\"\e[39m\e[28D"
+  - delay: 75
+    content: "\b\e[33mt\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[27D\e[90mis happening in this code?\"\e[39m\e[27D"
+  - delay: 80
+    content: "\b\e[33m \e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[26D\e[90ms happening in this code?\"\e[39m\e[26D"
+  - delay: 66
+    content: "\b\e[33mi\e[33ms\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[25D\e[90m happening in this code?\"\e[39m\e[25D"
+  - delay: 86
+    content: "\b\e[33ms\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[24D\e[90mhappening in this code?\"\e[39m\e[24D"
+  - delay: 60
+    content: "\b\e[33m \e[33mh\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[23D\e[90mappening in this code?\"\e[39m\e[23D"
+  - delay: 107
+    content: "\b\e[33mh\e[33ma\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[22D\e[90mppening in this code?\"\e[39m\e[22D"
+  - delay: 79
+    content: "\b\e[33ma\e[33mp\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[21D\e[90mpening in this code?\"\e[39m\e[21D"
+  - delay: 122
+    content: "\b\e[33mp\e[33mp\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[20D\e[90mening in this code?\"\e[39m\e[20D"
+  - delay: 105
+    content: "\b\e[33mp\e[33me\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[19D\e[90mning in this code?\"\e[39m\e[19D"
+  - delay: 64
+    content: "\b\e[33me\e[33mn\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[18D\e[90ming in this code?\"\e[39m\e[18D"
+  - delay: 111
+    content: "\b\e[33mn\e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[17D\e[90mng in this code?\"\e[39m\e[17D"
+  - delay: 80
+    content: "\b\e[33mi\e[33mn\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[16D\e[90mg in this code?\"\e[39m\e[16D"
+  - delay: 108
+    content: "\b\e[33mn\e[33mg\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[15D\e[90m in this code?\"\e[39m\e[15D"
+  - delay: 92
+    content: "\b\e[33mg\e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[14D"
+  - delay: 109
+    content: "\b\e[33mi\e[33mn\e[39m"
+  - delay: 49
+    content: "\b\e[33mn\e[33m \e[39m"
+  - delay: 686
+    content: "\b\b\e[33mn\e[39m\e[39m \b"
+  - delay: 117
+    content: "\b\b\e[33mi\e[39m\e[39m \b"
+  - delay: 95
+    content: "\b\b\e[33mg\e[39m\e[39m \b"
+  - delay: 20
+    content: "\e[90m in this code?\"\e[39m\e[15D"
+  - delay: 61
+    content: "\b\e[33mg\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[14D\e[90min this code?\"\e[39m\e[14D"
+  - delay: 140
+    content: "\b\e[33m \e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[13D\e[90mn this code?\"\e[39m\e[13D"
+  - delay: 96
+    content: "\b\e[33mi\e[33mn\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[12D\e[90m this code?\"\e[39m\e[12D"
+  - delay: 124
+    content: "\b\e[33mn\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[11D\e[90mthis code?\"\e[39m\e[11D"
+  - delay: 92
+    content: "\b\e[33m \e[33mt\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[10D\e[90mhis code?\"\e[39m\e[10D"
+  - delay: 116
+    content: "\b\e[33mt\e[33mh\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[9D\e[90mis code?\"\e[39m\e[9D"
+  - delay: 62
+    content: "\b\e[33mh\e[33mi\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[8D\e[90ms code?\"\e[39m\e[8D"
+  - delay: 81
+    content: "\b\e[33mi\e[33ms\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \b\b\b\b\b\b\b\e[90m code?\"\e[39m\b\b\b\b\b\b\b"
+  - delay: 187
+    content: "\b\e[33ms\e[33m \e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \b\b\b\b\b\b\e[90mcode?\"\e[39m\b\b\b\b\b\b"
+  - delay: 152
+    content: "\b\e[33m \e[33mc\e[39m\e[39m \e[39m \e[39m \e[39m \e[39m \b\b\b\b\b\e[90mode?\"\e[39m\b\b\b\b\b"
+  - delay: 102
+    content: "\b\e[33mc\e[33mo\e[39m\e[39m \e[39m \e[39m \e[39m \b\b\b\b\e[90mde?\"\e[39m\b\b\b\b"
+  - delay: 95
+    content: "\b\e[33mo\e[33md\e[39m\e[39m \e[39m \e[39m \b\b\b\e[90me?\"\e[39m\b\b\b"
+  - delay: 127
+    content: "\b\e[33md\e[33me\e[39m\e[39m \e[39m \b\b\e[90m?\"\e[39m\b\b"
+  - delay: 135
+    content: "\b\e[33me\e[33m?\e[39m\e[39m \b\e[90m\"\e[39m\b"
+  - delay: 154
+    content: "\b\e[33m?\e[33m\"\e[39m"
+  - delay: 392
+    content: "\e[?2004l\e[1B\r\e]697;OSCLock=850c687983064410a2e78e727f302eb1\a\e]697;PreExec\a"
+  - delay: 17
+    content: "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"
+  - delay: 76
+    content: "\r100  4567  100  4567    0     0  59753      0 --:--:-- --:--:-- --:--:-- 60092\r\n"
+  - delay: 728
+    content: "\e[?25l"
+  - delay: 85
+    content: "\e[32m⠋\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 82
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 87
+    content: "\r\e[2K\e[32m⠴\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠦\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠧\e[0m Thinking..."
+  - delay: 84
+    content: "\r\e[2K\e[32m⠇\e[0m Thinking..."
+  - delay: 85
+    content: "\r\e[2K\e[32m⠏\e[0m Thinking..."
+  - delay: 82
+    content: "\r\e[2K\e[32m⠋\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠙\e[0m Thinking..."
+  - delay: 82
+    content: "\r\e[2K\e[32m⠹\e[0m Thinking..."
+  - delay: 81
+    content: "\r\e[2K\e[32m⠸\e[0m Thinking..."
+  - delay: 84
+    content: "\r\e[2K\e[32m⠼\e[0m Thinking..."
+  - delay: 83
+    content: "\r\e[2K\e[32m⠴\e[0m Thinking..."
+  - delay: 86
+    content: "\r\e[2K\e[32m⠦\e[0m Thinking..."
+  - delay: 31
+    content: "\r\e[2K\e[32m⠧\e[0m Thinking...\r\n\e[?25h\r\e[1A\e[2K"
+  - delay: 24
+    content: "\e[32m╭─\e[0m\e[32m────────────────────────────────\e[0m\e[32m Explanation \e[0m\e[32m─────────────────────────────────\e[0m\e[32m─╮\e[0m\r\n\e[32m│\e[0m This code defines a Python class \e[1;36;40mUserConfig\e[0m that extends \e[1;36;40mBaseSettings\e[0m from the \e[32m│\e[0m\r\n\e[32m│\e[0m \e[1;36;40mpydantic_settings\e[0m module. The class contains methods for getting and setting   \e[32m│\e[0m\r\n\e[32m│\e[0m values using dot notation, saving the configuration to a TOML file, checking   \e[32m│\e[0m\r\n\e[32m│\e[0m if a configuration file exists, customizing settings sources, and initializing \e[32m│\e[0m\r\n\e[32m│\e[0m the configuration with default values. The code also includes error handling   \e[32m│\e[0m\r\n\e[32m│\e[0m for validation errors and missing/malformed configuration files.               \e[32m│\e[0m\r\n\e[32m╰────────────────────────────────────────────────────────────────────────────────╯\e[0m\r\n"
+  - delay: 128
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                 \r \r"
+  - delay: 8
+    content: "\e]697;OSCUnlock=850c687983064410a2e78e727f302eb1\a\e]697;Dir=/Users/markjtaylorroberts\a\e]697;Shell=zsh\a\e]697;ShellPath=/bin/zsh\a\e]697;PID=479\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys021\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=\a\e]697;FigAutosuggestionColor=fg=8\a\e]697;User=markjtaylorroberts\a"
+  - delay: 14
+    content: "\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\r\n\e[1;36m~\e[0m took \e[1;33m2s\e[0m \r\n\e[1;32m❯\e[0m \e]697;EndPrompt\a\e]697;NewCmd=850c687983064410a2e78e727f302eb1\a\e[K\e[79C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[79D\e[?2004h"
+  - delay: 2244
+    content: "\e[?2004l\r\r\n"

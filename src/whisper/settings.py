@@ -67,6 +67,8 @@ def make_local_path():
         return str(
             (Path.home() / ".local" / "share" / "nomic.ai" / "GPT4All").resolve()
         )
+    else:
+        return "replace-me"
 
 
 class LocalModelConfig(BaseModel):

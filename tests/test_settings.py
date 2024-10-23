@@ -89,4 +89,6 @@ def test_config_exists(user_config):
 def test_initialize(mock_system, user_config, expected_toml):
     toml = user_config.initialize()
 
+    print(expected_toml)
+    print(toml)
     assert toml == expected_toml

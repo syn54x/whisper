@@ -6,8 +6,8 @@
 
 ![Python 3.10 | 3.11 | 3.12](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-blue.svg)
 ![Ruff](https://img.shields.io/badge/linted%20by-ruff-FFC107.svg)
-![PyPI](https://img.shields.io/pypi/v/just-whisper) ::coverage
-
+![PyPI](https://img.shields.io/pypi/v/just-whisper)
+[![codecov](https://codecov.io/gh/syn54x/mkdocs-typer2/branch/main/graph/badge.svg)](https://codecov.io/gh/syn54x/mkdocs-typer2)
 ![Downloads](https://img.shields.io/pypi/dm/just-whisper)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub issues](https://img.shields.io/github/issues/syn54x/whisper)

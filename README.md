@@ -42,7 +42,7 @@
 To install Whisper, you can use pip:
 
 ```console
-pip install just-whisper
+pipx install just-whisper
 ```
 
 ## Setup

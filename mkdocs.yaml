@@ -44,8 +44,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - mkdocs_typer:
-      cmd: typer whisper utils docs --name Whisper
+  - mkdocs-typer2
   - mkdocstrings:
       handlers:
         python:

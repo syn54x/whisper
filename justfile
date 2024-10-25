@@ -17,6 +17,10 @@ lint:
 test:
     uv run pytest -x
 
+commit MSG:
+    git add -A
+    git commit -m "{{MSG}}"
+
 generate-gifs:
     echo "Generating gifs..."
     terminalizer render docs/assets/demo -o docs/assets/_demo.gif -q 50

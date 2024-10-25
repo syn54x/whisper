@@ -9,7 +9,7 @@
 ![PyPI](https://img.shields.io/pypi/v/just-whisper) ::coverage
 
 ![Downloads](https://img.shields.io/pypi/dm/just-whisper)
-![License](https://img.shields.io/github/license/syn54x/whisper)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub issues](https://img.shields.io/github/issues/syn54x/whisper)
 
 ## Supported Models
